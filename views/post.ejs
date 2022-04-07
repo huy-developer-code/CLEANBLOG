@@ -1,0 +1,56 @@
+<% include layout/header.ejs %> <% if (typeof baiviet != "undefined" ){ %>
+<header
+  class="masthead"
+  style="background-image: url('/posts/<%= baiviet.image %>')"
+>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <div class="site-heading">
+          <h1>Clean Blog</h1>
+          <span class="subheading">A Blog Theme by Start Bootstrap</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-md-10 mx-auto">
+      <div class="post-heading">
+        <h1><%= baiviet.title %></h1>
+        <h2 class="subheading"><%= baiviet.subtitle %></h2>
+        <span class="meta"
+          >Posted by
+          <a href="#"> <%= baiviet.username %> </a>
+          on <%= baiviet.createdAt.toDateString() %></span
+        >
+      </div>
+      <div class="post-description">
+        <p><%= baiviet.content %></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<article>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto"><% baiviet.content %></div>
+    </div>
+  </div>
+</article>
+<% } else { %>
+<header ...style="background-image: url('img/strawberry.jpg')">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <div class="post-heading">
+          <h1>Chưa có bài viết nào hết</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<% } %> <% include layout/footer.ejs %>

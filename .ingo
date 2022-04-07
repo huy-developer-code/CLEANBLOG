@@ -1,0 +1,54 @@
+// "start": "nodemon ./bin/www"
+// <!-- <% if(userId == undefined){ %>
+//             <li class="nav-item">
+//               <a class="nav-link" href="/dangky">Dang ky</a>
+//             </li>
+//             <li class="nav-item">
+//               <a class="nav-link" href="/dangnhap">Dang nhap</a>
+//             </li>
+//             <% } else{ %>
+//             <li class="nav-item">
+//               <a class="nav-link" href="/dangnhap">Login</a>
+//             </li>
+//             <% } %> -->
+
+// <!-- <div class="clearfix">
+//   <% if(tranghientai > 1){ var page = parseInt(tranghientai) - 1 %>
+//   <a class="btn btn-primary float-left" href="/?page=<%= page %>">
+//     &larr; Previous Posts
+//   </a>
+//   <% } if(tranghientai < trangcuoicung){ var page=parseInt(tranghientai) + 1 %>
+//   <a class="btn btn-primary float-right" href="/?page=<%= page %> ">
+//     Next Posts &rarr;
+//   </a>
+//   <% } %>
+// </div> -->
+// button forward, back // router.get('/', function (req, res, next) { // 1 //
+// MyPost.find({}, (error, tatcabaiviet) => { // res.render('index.ejs', {
+// tatcabaiviet }); // }) // 2 // let tranghientai = req.query.page || 1; // let
+// baivietmoitrang = 3; // let tongsobaiviet; // MyPost.find() // .countDocuments()
+// // .then(count => { // tongsobaiviet = count; // const trangcuoicung =
+// Math.ceil(tongsobaiviet / baivietmoitrang); // MyPost.find() //
+// .skip((tranghientai - 1) * baivietmoitrang) // .limit(baivietmoitrang) //
+// .then(tatcabaiviet => { // res.render("index.ejs", {Il nếu gõ localhost:3000 sẽ
+// mặc định nhảy đến trang đầu // tatcabaiviet, tranghientai, // tongsobaiviet,
+// trangcuoicung // }); // }); // }) // }): // Products //
+// router.post('/admin/products', function (req, res, next) { // if (!req.files ||
+// Object.keys(req.files).length === 0) { // return res.status(400).send('No files
+// were uploaded.'); // } // // The name of the input field (i.e. "sampleFile") is
+// used to retrieve the uploaded file // // sampleFile = req.files.sampleFile; //
+// // uploadPath = 'public/posts/' + sampleFile.name; // // Use the mv() method to
+// place the file somewhere on your server // // sampleFile.mv(uploadPath, function
+// (err) { // // if (err) // // return res.status(500).send(err); // // nd =
+// req.body.conntent.replaceAll('
+// <p>&nbsp</p>
+// ','').trim() // // nd = req.body.content.replaceAll('
+// <p>&nbsp;</p>
+// ','').trim() // // nd1 = req.body.content.split('
+// <p>&nbsp;</p>
+// ').join('').trim() // var mp = new mypost({ // title: req.body.title, //
+// username: req.body.username, // subtitle: req.body.subtitle, // // content:
+// dietvirus(nd), // // image: sampleFile.name // // }); // }) // mp.save(error =>
+// res.redirect('/')) // }); // router.get('/*.:masolienhe', function (req, res,
+// next) { // if (req.params.masolienhe === "12") // res.render('contact.ejs'); //
+// else // res.send("Thế là hết, không liên hệ được") // });

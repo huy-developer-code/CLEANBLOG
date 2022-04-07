@@ -1,0 +1,96 @@
+<% include layout/header.ejs %>
+<!-- Page Header -->
+<header class="masthead" style="background-image: url('img/bg-home.jpg')">
+<div class="container">
+<div class="row">
+<div class="col-lg-8 col-md-10 mx-auto">
+<div class="site-heading">
+<h1>Clean Blog</h1>
+<span class="subheading">A Blog Theme by Start Bootstrap</span>
+</div>
+</div>
+</div>
+</div>
+</header>
+
+<!-- Main Content -->
+
+<div class="container">
+<div class="row">
+<div class="col-lg-8 col-md-10 mx-auto">
+<% tatcabaiviet.forEach(baiviet=> { %>
+<div class="post-preview">
+<a href="/baiviet/<%= baiviet._id %> ">
+<h2 class="post-title"><%= baiviet.title %></h2>
+
+</a>
+<p class="post-meta">
+Posted by
+<a href="#"><%= baiviet.username %> </a>
+<p class="post-desccription"><%= baiviet.content %></p>
+on <% baiviet.createdAt.toDateString() %>
+</p>
+</div>
+<% }); %>
+<hr />
+</div>
+</div>
+</div>
+<hr />
+<!-- Pager -->
+<!-- UpdateButton Forward, Back-->
+<div class="row">
+    <!-- hiển thị phần trang nếu có trang -->
+    <% if(pages > 0){ %>
+    <nav class="mx-auto">
+    <ul class="pagination" style="margin-top: 2rem">
+    <!-- FIRST ITEM -->
+    <% if(current == 1) { %>
+    <li class="page-item disabled">
+        <a class="page-link">first</a>
+    </li>
+    <% } else { %>
+    <li class="page-item">
+        <a class="page-link" href="/1">First</a>
+    </li>
+    <% } %>
+    <!-- ITEMS  -->
+    <% var i = (Number(current) > 3 ? Number(current) - 2: 1) %>
+        <% if(i != 1) { %>
+        <li class="page-item disabled">
+            <a class="page-link" href="#">...<a>
+        </li>
+    <% } %>
+    <% for(;i <= (Number(current) + 2) && i <= pages; i++){ %>
+        <% if(i == current) { %>
+            <li class="page-item active">
+                <a class="page-link" href="/<%= i %>/"> <%= i %> </a>
+            </li>
+        <% } else { %>
+            <li class="page-item">
+                <a class="page-link" href="/<%= i %>/"> <%= i %> </a>
+            </li>
+        <% } %>
+        <% if (i == Number(current) + 2 && i< pages) { %>
+        <li class="page-item disabled">
+            <a class="page-link">...</a>
+        </li>
+        <% } %>
+    <% } %>
+    <!-- Last  Item-->
+    <% if(current == pages){ %>
+        <li class="page-item disabled">
+            <a class="page-link"> Last </a>
+        </li>
+        <% } else { %>
+        <li class="page-item">
+            <a class="page-link" href="/<%= pages %>/"> Last <la>
+        </li>
+        <% } %>
+        </ul>
+    </nav>
+    <% } %>
+    </div>
+
+<!-- Footer -->
+<% include layout/footer.ejs %>
