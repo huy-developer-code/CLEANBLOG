@@ -13,7 +13,7 @@ var usersRouter = require('./routes/users');
 var app = express();
 app.use(expressSession({
   secret: 'secret',
-  store:MongoStore.create({mongoUrl:'mongodb://localhost:27017/mypost'}),
+  store:MongoStore.create({mongoUrl:'mongodb+srv://voquanghuy:123@cluster0.0cygz.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'}),
   resave: true,
   saveUninitialized: true
 }));
@@ -52,5 +52,9 @@ app.use(function(err, req, res, next) {
 //   secret: 'secret',
 //   store:MongoStore.create({mongoUrl:'mongodb://localhost:27017/mypost'})
 // }))
+const PORT = process.env.PORT ;
+app.listen(PORT, () => {
+    console.log(`Our app is running on port ${ PORT }`);
+});
 
 module.exports = app;

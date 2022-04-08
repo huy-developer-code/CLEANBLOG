@@ -1,7 +1,7 @@
 var db = require("mongoose");
 var bcrypt = require("bcrypt");
 
-db.connect("mongodb://127.0.0.1:27017/mypost", {
+db.connect("mongodb+srv://voquanghuy:123@cluster0.0cygz.mongodb.net/myFirstDatabase?retryWrites=true&w=majority", {
     useNewUrlParser: true,
     useUnifiedTopology: true
 });

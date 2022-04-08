@@ -39,7 +39,7 @@ router.get("/dangky", function (req, res, next) {
 })
 function kiemtrahople(req, res, next) {
     if (!req.body.username || !req.body.password || !req.body.email)
-        res.redirect('/dangky')
+        res.redirect('/users/dangky')
     else
         next()
 }
