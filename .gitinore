@@ -1,5 +1,5 @@
-/node_modules
-/packge-lock.json
+node_modules
+packge-lock.json
 #* được sử dụng làm đối sánh ký tự đại diện
 #/ được sử dụng để bỏ qua tên đường dẫn liên quan đến .gitignore tệp
 #được sử dụng để thêm nhận xét vào một .gitignoretệp
