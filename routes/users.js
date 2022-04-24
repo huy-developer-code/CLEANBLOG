@@ -2,8 +2,6 @@ var express = require('express');
 var router = express.Router();
 var bcrypt = require("bcrypt")
 var User = require('../models/user');
-
-
 // confirm
 router.post("/dangnhap",function(req,res,next){
     var {email,password} = req.body
